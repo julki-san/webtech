@@ -1,0 +1,617 @@
+/* ----- POPPINS FONT Link ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ----- VARIABLES ----- */
+:root {
+  --body-color: rgb(250, 250, 250);
+  --color-white: rgb(255, 255, 255);
+  --text-color-second: rgb(68, 68, 68);
+  --text-color-third: rgb(30, 159, 171);
+  --first-color: rgb(110, 87, 224);
+  --first-color-hover: rgb(40, 91, 212);
+  --second-color: rgb(0, 201, 255);
+  --third-color: rgb(192, 166, 49);
+  --first-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ----- BASE ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--body-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Push footer to the bottom */
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+/* ----- SCROLLBAR ----- */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* ----- BUTTONS ----- */
+.btn {
+  font-weight: 500;
+  padding: 12px 20px;
+  background: #efefef;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .4s;
+}
+.btn > i {
+  margin-left: 10px;
+}
+.btn:hover {
+  background: var(--second-color);
+  color: var(--color-white);
+}
+
+/* ----- ICONS ----- */
+i {
+  font-size: 16px;
+}
+
+/* ----- NAVIGATION BAR ----- */
+nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  padding: 10px 9vw;
+  background: var(--body-color);
+  transition: .3s;
+  z-index: 100;
+  gap: 20px;
+}
+
+.nav-logo {
+  flex-shrink: 0;
+}
+
+.nav-logo .logo-image {
+  display: block;
+  max-width: 80px;
+  height: auto;
+  transition: max-width 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .nav-logo .logo-image {
+    max-width: 60px;
+  }
+}
+@media (max-width: 480px) {
+  .nav-logo .logo-image {
+    max-width: 40px;
+  }
+}
+
+.nav-name {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text-color-third);
+}
+
+.nav-logo span {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  font-size: 5em;
+  color: var(--text-color-second);
+}
+
+.nav-menu, .nav_menu_list {
+  display: flex;
+}
+
+.nav-menu .nav_list {
+  list-style: none;
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color-second);
+  font-weight: 500;
+  padding-inline: 15px;
+  margin-inline: 20px;
+}
+
+.nav-menu-btn {
+  display: none;
+}
+.nav-menu-btn i {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.active-link {
+  color: var(--first-color);
+  position: relative;
+  transition: 0.3s;
+}
+.active-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: var(--first-color);
+  border-radius: 50%;
+}
+
+/* ----- WRAPPER ----- */
+.wrapper{
+    padding-inline: 10vw;
+}
+
+/* ----- FEATURED BOX ----- */
+.featured-box{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    min-height: 700px;
+}
+
+/* ----- FEATURED TEXT BOX ----- */
+.featured-text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 80vh;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 20px;
+}
+.featured-text-card span{
+    background: var(--third-color);
+    color: var(--color-white);
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.featured-name{
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--text-color-second);
+    margin-block: 20px;
+}
+.typedText{
+    text-transform: capitalize;
+    color: var(--text-color-third);
+}
+.featured-text-info{
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: var(--text-color-second);
+}
+.featured-text-btn > .blue-btn {
+  font-weight: 500;                /* Same font weight as .btn */
+  padding: 12px 30px;              /* Adjust padding to keep it rectangular */
+  background: var(--first-color);  /* Background color */
+  color: var(--color-white);       /* Text color */
+  border: none;                    /* No border */
+  border-radius: 10px;             /* Rounded corners, but keeps the shape rectangular */
+  cursor: pointer;                /* Pointer on hover */
+  transition: .4s;                 /* Transition effect */
+}
+
+.featured-text-btn > .blue-btn:hover {
+  background: var(--first-color-hover); /* Hover background */
+  color: var(--color-white);             /* Maintain white text on hover */
+}
+
+.social_icons{
+    display: flex;
+    margin-top: 5em;
+    gap: 30px;
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.icon:hover{
+    color: var(--first-color);
+}
+
+/* ----- FEATURED IMAGE BOX ----- */
+.featured-image{
+    display: flex;
+    justify-content: flex-end;       /* Align to the right */
+    align-items: center;             /* Vertically center the image */
+    min-height: 80vh;
+    width: 50%;
+    padding-right: 10px;             /* Optional: Adds space to the right */
+    overflow: hidden;                /* Prevent overflow of image */
+}
+
+.image{
+    margin: auto 0;
+    width: 380px;
+    height: 380px;
+    border-radius: 55% 45% 55% 45%;
+    overflow: hidden;
+    animation: imgFloat 7s ease-in-out infinite;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes imgFloat {
+    50%{
+        transform: translateY(10px);     /* Adds floating effect */
+        border-radius: 45% 55% 45% 55%;  /* Keeps the rounded corners */
+    }
+}
+
+/* ----- SCROLL BUTTON ----- */
+.scroll-btn{
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);   /* Center the button */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 150px;
+   height: 50px;
+   gap: 5px;
+   text-decoration: none;
+   color: var(--text-color-second);
+   background: var(--color-white);
+   border-radius: 30px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-btn i{
+    font-size: 20px;
+}
+
+/* ----- SECTIONS ----- */
+.section {
+  padding-block: 5em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.col {
+  width: 50%;
+}
+
+/* ----- REUSABLE HEADER ----- */
+.top-header {
+  text-align: center;
+  margin-bottom: 5em;
+}
+
+.top-header h1 {
+  font-weight: 600;
+  color: var(--text-color-second);
+  margin-bottom: 10px;
+}
+
+.top-header span {
+  color: #999;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color-second);
+  margin-bottom: 15px;
+}
+
+/* ----- ABOUT SECTION ----- */
+.about-info {
+  padding: 30px 20px 70px;
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 20px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  text-align: center;
+}
+
+.about-info p {
+  font-size: 15px;
+  color: #777;
+}
+
+.about-btn button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: var(--first-color);
+  color: var(--color-white);
+  border-radius: 30px;
+}
+
+.about-btn button:hover {
+  background: var(--first-color-hover);
+}
+
+/* ----- SKILLS ----- */
+.skills-box {
+  margin: 10px;
+}
+
+.skills-header {
+  margin-bottom: 30px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skills-list span {
+  font-size: 14px;
+  background: var(--first-color);
+  color: var(--color-white);
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+/* ----- PROJECTS ----- */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.project-box {
+  width: 30%;
+  height: 250px;
+  background: var(--color-white);
+  border-radius: 20px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-box > i {
+  font-size: 50px;
+  color: #00B5E7;
+  margin-bottom: 25px;
+}
+
+.project-box label {
+  font-size: 15px;
+  color: #777;
+}
+
+.project-box::after,
+.contact-info::after {
+  content: "";
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--second-color);
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.project-box:hover::after,
+.contact-info:hover::after {
+  bottom: 0;
+}
+
+.project-box:hover i,
+.project-box:hover h3,
+.project-box:hover label {
+  color: var(--color-white);
+  z-index: 2;
+}
+
+/* ----- CONTACT INFO ----- */
+.contact-info {
+  background: var(--second-color);
+  border-radius: 10px;
+  padding: 20px 30px;
+  height: 315px;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-info > h2,
+.contact-info > p {
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info p i {
+  font-size: 18px;
+}
+
+.contact-info:hover h2,
+.contact-info:hover p,
+.contact-info:hover i {
+  color: #777;
+  z-index: 2;
+}
+
+/* ----- CONTACT FORM ----- */
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.form-inputs {
+  display: flex;
+  gap: 10px;
+  width: 200%;
+}
+
+.input-field {
+  width: 100%; /* Adjust this value to change the width of the input fields */
+  height: 55px;
+  border: 2px solid #AAA;
+  border-radius: 10px;
+  padding-inline: 20px;
+  background: transparent;
+  outline: none;
+}
+
+/* Responsive design: Make the input fields take full width on smaller screens */
+@media screen and (max-width: 768px) {
+  .input-field {
+    width: 100%; /* Adjust input fields to full width on smaller screens */
+  }
+
+  .form-inputs {
+    flex-direction: column; /* Stack the fields vertically on smaller screens */
+  }
+}
+
+
+textarea {
+  width: 200%;
+  height: 250px;
+  padding: 15px 20px;
+  border: 2px solid #AAA;
+  border-radius: 10px;
+  background: transparent;
+  outline: none;
+  resize: none;
+}
+
+.form-button .btn {
+  background: var(--second-color);
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-button .btn:hover {
+  background: var(--first-color);
+}
+
+/* ----- FOOTER ----- */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background: #f9f9f9;  /* Light background color for the footer */
+  position: relative;
+  z-index: 10;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on top */
+  margin-top: 20px; /* Add some space between content and footer */
+}
+
+/* ----- TOP FOOTER ----- */
+.top-footer {
+  font-size: 18px;
+  color: var(--text-color-second);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ----- MIDDLE FOOTER (Menu) ----- */
+.middle-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.footer_menu_list a {
+  text-decoration: none;
+  color: var(--text-color-second);
+  font-size: 16px;
+}
+
+.footer_menu_list a:hover {
+  color: var(--first-color);
+}
+/* ----- BOTTOM FOOTER ----- */
+.bottom-footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+.bottom-footer a {
+  text-decoration: none;
+  color: var(--text-color-third);
+}
+
+.bottom-footer a:hover {
+  color: var(--first-color);
+}
+
+main {
+  flex-grow: 1;  /* Ensure main content takes up available space */
+}
